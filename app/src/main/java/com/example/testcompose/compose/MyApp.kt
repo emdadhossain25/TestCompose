@@ -9,6 +9,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.testcompose.ui.theme.TestComposeTheme
 
 @Composable
 fun MyApp(
@@ -17,9 +19,10 @@ fun MyApp(
     var shouldShowOnBoarding by remember { mutableStateOf(true) }
 
     if (shouldShowOnBoarding) {
-        Greetings()
+        OnBoardingScreen(OnContinueClicked = { shouldShowOnBoarding = false })
     } else {
-        OnBoardingScreen()
+        Greetings()
+
     }
 
 
@@ -36,5 +39,13 @@ fun Greetings(
         for (name in names) {
             Greeting(name = name)
         }
+    }
+}
+
+@Preview(showBackground = true, widthDp = 320)
+@Composable
+fun DefaultPreview() {
+    TestComposeTheme() {
+        Greetings()
     }
 }

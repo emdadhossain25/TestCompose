@@ -1,9 +1,6 @@
 package com.example.testcompose.compose
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -15,10 +12,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.testcompose.ui.theme.TestComposeTheme
 
 @Composable
-fun OnBoardingScreen() {
-    var shouldShowOnboarding by remember { mutableStateOf(true) }
+fun OnBoardingScreen(
+    OnContinueClicked: () -> Unit
+) {
     Surface {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -27,11 +27,21 @@ fun OnBoardingScreen() {
         ) {
             Text("Welcome to basics")
             Button(
-                onClick = { shouldShowOnboarding = false },
+                onClick = OnContinueClicked,
                 modifier = Modifier.padding(vertical = 24.dp)
             ) {
                 Text(text = "Continue")
             }
+
+
         }
+    }
+}
+
+@Preview(showBackground = true, widthDp = 320, heightDp = 720)
+@Composable
+fun OnboardingPreview() {
+    TestComposeTheme() {
+        OnBoardingScreen(OnContinueClicked = {})
     }
 }
