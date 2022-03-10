@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import com.codelab.layouts.ui.TestComposeTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,8 +37,10 @@ class MainActivity : ComponentActivity() {
 
     @Preview(showBackground = true)
     @Composable
-    fun PhotographerCardPreview(){
+    fun PhotographerCardPreview() {
+        TestComposeTheme {
+            PhotographerCard()
         }
-
+    }
 }
 
