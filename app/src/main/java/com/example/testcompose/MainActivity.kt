@@ -1,6 +1,5 @@
 package com.example.testcompose
 
-import android.content.res.Resources
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -18,9 +17,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.codelab.layouts.ui.TestComposeTheme
@@ -60,7 +57,9 @@ class MainActivity : ComponentActivity() {
                     .align(Alignment.CenterVertically)
             ) {
                 Text("Alfred Sisley", fontWeight = FontWeight.Bold)
-                CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
+                CompositionLocalProvider(
+                    LocalContentAlpha provides ContentAlpha.medium
+                ) {
                     Text("3 minutes ago", style = MaterialTheme.typography.body2)
                 }
 
