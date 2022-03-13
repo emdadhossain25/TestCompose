@@ -10,7 +10,9 @@ import androidx.compose.ui.Modifier
 fun BodyContentComposable(
     modifier: Modifier
 ) {
-    Column(modifier = modifier) {
+    Column(
+        modifier = modifier
+    ) {
         Text(
             text = "Hi There! From Scaffold",
         )
