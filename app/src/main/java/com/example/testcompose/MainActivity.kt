@@ -6,13 +6,13 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.codelab.layouts.ui.TestComposeTheme
-import com.example.testcompose.compose.scaffold.ScaffoldCodeLab
+import com.example.testcompose.compose.scaffold.SimpleList
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-
+            SimpleList()
         }
     }
 
@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun ScaffoldCodeLabPreview() {
         TestComposeTheme {
-            ScaffoldCodeLab()
+            SimpleList()
         }
     }
 }
