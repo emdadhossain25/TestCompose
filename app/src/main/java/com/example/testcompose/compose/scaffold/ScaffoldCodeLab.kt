@@ -35,7 +35,6 @@ fun ScaffoldCodeLab() {
                     IconButton(onClick = {
                         result="favorite top app bar is clicked"
                         selectedItem = "favorite"
-
                     }) {
                         Icon(Icons.Filled.Favorite, contentDescription = null)
                     }
