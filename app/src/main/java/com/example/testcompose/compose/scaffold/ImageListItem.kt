@@ -19,7 +19,8 @@ fun ImageListItem(
     ) {
 
         Image(
-            painter = rememberImagePainter("https://findicons.com/files/icons/2166/oxygen/48/format_indent_less.png"),
+            painter = rememberImagePainter(
+                "https://findicons.com/files/icons/2166/oxygen/48/format_indent_less.png"),
             contentDescription = "Android Logo",
             modifier = Modifier.size(50.dp)
         )
