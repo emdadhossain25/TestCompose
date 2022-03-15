@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.codelab.layouts.ui.TestComposeTheme
 import com.example.testcompose.compose.BodyContent
+import com.example.testcompose.compose.StaggeredGrid
 import com.example.testcompose.compose.scaffold.SimpleList
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +23,7 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun ScaffoldCodeLabPreview() {
         TestComposeTheme {
-            BodyContent(modifier = Modifier)
+           BodyContent(modifier = Modifier)
         }
     }
 }
