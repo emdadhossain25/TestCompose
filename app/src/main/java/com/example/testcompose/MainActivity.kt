@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            BodyContent(modifier = Modifier)
+            BodyContent(modifier = Modifier, rows = 4)
         }
     }
 
@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun ScaffoldCodeLabPreview() {
         TestComposeTheme {
-           BodyContent(modifier = Modifier)
+            BodyContent(modifier = Modifier, rows = 6)
         }
     }
 }

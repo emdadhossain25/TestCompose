@@ -1,9 +1,15 @@
 package com.example.testcompose.compose
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
@@ -17,11 +23,20 @@ val topics = listOf(
 
 @Composable
 fun BodyContent(
-    modifier: Modifier
+    modifier: Modifier,
+    rows:Int
 ) {
-    StaggeredGrid(modifier = modifier, rows = 5) {
-        for (topic in topics) {
-            Chip(modifier = Modifier.padding(8.dp), text = topic)
+    Row(
+        modifier = Modifier
+            .background(color = Color.LightGray)
+            .size(400.dp)
+            .padding(16.dp)
+            .horizontalScroll(rememberScrollState()),
+    ) {
+        StaggeredGrid (rows = rows){
+            for (topic in topics) {
+                Chip(modifier = Modifier.padding(8.dp), text = topic)
+            }
         }
     }
 }
